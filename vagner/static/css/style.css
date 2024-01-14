@@ -1,0 +1,130 @@
+#container__myself {
+    font-family: 'Montserrat', sans-serif;
+    weight: 700;
+}
+
+#img__general__photo{
+    width: 750px;
+    height: 420px;
+    margin-bottom: 50px;
+}
+
+#text__myself{
+    font-family: 'Montserrat', sans-serif;
+    weight: 400;
+}
+
+#shuttle__style {
+    padding-top: 30px;
+}
+
+.background__image {
+    background: url('/static/img/space.jpg') no-repeat center / cover;
+}
+
+#h1__myself{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 42px;
+	line-height: 52px;
+	font-weight: 700;
+}
+
+.icons__img__mini {
+    width: 165px;
+    height: 165px;
+    margin-left: 20px;
+}
+
+.slider-nav img {
+    object-fit: cover;
+    border: 10px solid transparent;
+}
+
+.slider-nav img.active-thumbnail {
+    border-color: white /* Задайте цвет границы для текущего элемента */
+}
+
+.arrows_prev {
+    margin-left: 10px;
+    left: -65px;
+}
+
+.arrows_next {
+    right: -75px;
+}
+
+.arrows_prev, .arrows_next {
+    position: absolute;
+    top: 35%;
+    height: 60px;
+    width: 60px;
+    z-index: 1;
+    cursor: pointer;
+    filter: invert(100%);
+    transition: .5s;
+}
+
+.arrows_prev:hover, .arrows_next:hover {
+    transform: scale(1.1)
+}
+
+.img_container:hover img {
+    border: 2px solid transparent;
+    border-color: gray;
+}
+
+.menu__items:hover {
+    transform: scale(1.1);
+    transition: .5s;
+}
+
+.img_photo{
+    width: 750px;
+    height: 420px;
+}
+
+.popup-image{
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgb(0, 0, 0, 0.8);
+    height: 100%;
+    width: 100%;
+    z-index: 100;
+    display: none;
+}
+
+.popup-image span {
+    position: absolute;
+    top: 0;
+    right: 10px;
+    font-size: 40px;
+    font-weight: bolder;
+    color: white;
+    cursor: pointer;
+    z-index: 100;
+}
+
+.popup-image img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 2px solid #fff;
+    border-radius: 5px;
+    width: 90%;
+    height: 90%;
+    object-fit: cover;
+}
+
+.popup-image span:hover {
+    transform: scale(1.4);
+    transition: .5s;
+}
+
+
+@media (max-width: 90%) {
+    .popup-image img {
+        width: 90%;
+    }
+}

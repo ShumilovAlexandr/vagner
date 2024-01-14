@@ -1,0 +1,120 @@
+{% extends 'base.html' %}
+
+{% block content %}
+	<div class="container">
+		<div class="position-relative mt-5">
+			<h1 class="display-4 text-center fw-bold" id="container__myself">
+				<p>Космическое агентство</p>
+			</h1>
+			<div class="text-center
+						w-50 p-3
+						position-relative bottom-0 start-50 translate-middle-x
+						fs-6
+						lh-lg"
+				 id="text__myself">
+				Национальное управление по аэронавтике и исследованию
+				космического пространства - ведомство, относящееся к
+				федеральному правительству <br> США и подчиняющееся
+				непосредственно президенту США.
+			</div>
+		</div>
+		<div class="row mt-5 d-flex">
+			<div class="col-sm-6 mb-3 mb-sm-0">
+				<div class="card-body">
+					<div class="row row-cols-1 row-cols-md-2 g-4 text-center"
+						 id="shuttle__style">
+						<div>
+							<img src="/static/img/rocket.svg"
+								 class="w-50 h-50"
+								 alt="Иконка шаттла">
+							<div class="card-body mt-2">
+								<p class="card-text h6"
+								>Спейс шаттлы - <br>пилотируемые корабли</p>
+						  	</div>
+					  	</div>
+					  	<div>
+							<img src="/static/img/telescope.svg"
+								 class="w-50 h-50"
+								 alt="Иконка телескопа">
+						  	<div class="card-body mt-2">
+								<p class="card-text h6">Лучшее
+									телескопическое<br>оборудование</p>
+						  	</div>
+					  	</div>
+  						<div>
+							<img src="/static/img/moon.svg"
+								 class="w-50 h-50"
+								 alt="Иконка луны">
+      						<div class="card-body mt-2">
+								<p class="card-text h6">Целимся на Луну <br>и
+									Марс</p>
+      						</div>
+  						</div>
+  						<div>
+							<img src="/static/img/medal.svg"
+								 class="w-50 h-50"
+								 alt="Иконка медали">
+      						<div class="card-body mt-2">
+								<p class="card-text h6">Золотая медаль <br>по
+									научным исследованиям</p>
+      						</div>
+  						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-6">
+				<div class="card-body">
+					<figure class="figure">
+  						<img src="/static/img/stars.jpg"
+							 class="img-fluid rounded-5"
+							 alt="Проблема с прогрузкой изображения">
+					</figure>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+
+
+
+	<div class="bg-image p-5 text-center text-white background__image">
+	  	<h1 class="mb-3 h2 mt-5" id="h1__myself">Фотографии</h1>
+		<div class="wrapper mt-5">
+			<div class="row justify-content-center">
+				<div class="col-6">
+					<div class="slider-for img_container">
+						{% for photo in photos %}
+							<img class="img-fluid rounded-5"
+								 id="img__general__photo"
+								 src="{{ photo.image.url }}">
+						{% endfor %}
+					</div>
+				</div>
+
+				<div class="popup-image">
+					<img
+							src="/media/image/079eac5ac88d91ef5382ee95ad990855.jpeg" class="img_photo" alt="">
+					<span>&times;</span>
+				</div>
+				
+				<div class="col-9">
+					<div class="slider-nav" >
+						{% for photo in photos %}
+							<img src="{{ photo.image.url }}"
+								 class="rounded-5 icons__img__mini {% if forloop.first %}active-thumbnail{% endif %}">
+						{% endfor %}
+					</div>
+				</div>
+			</div>
+
+		</div>
+
+
+
+
+	</div>
+
+
+
+{% endblock %}
