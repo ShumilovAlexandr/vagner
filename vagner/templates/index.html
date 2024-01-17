@@ -1,9 +1,10 @@
 {% extends 'base.html' %}
 
 {% block content %}
+<!--Стартовая страница-->
 	<div class="container">
 		<div class="position-relative mt-5">
-			<h1 class="display-4 text-center fw-bold" id="container__myself">
+			<h1 class="display-4 text-center fw-bold h1__myself">
 				<p>Космическое агентство</p>
 			</h1>
 			<div class="text-center
@@ -62,56 +63,129 @@
 					</div>
 				</div>
 			</div>
-			<div class="col-sm-6">
+			<div class="col-sm-6 mt-4 ">
 				<div class="card-body">
-					<figure class="figure">
+					<picture class="figure">
   						<img src="/static/img/stars.jpg"
 							 class="img-fluid rounded-5"
+							 style="width: 590px;"
 							 alt="Проблема с прогрузкой изображения">
-					</figure>
+					</picture>
 				</div>
 			</div>
 		</div>
 	</div>
 
-
-
-
-
+<!--Изображения и слайдер-->
 	<div class="bg-image p-5 text-center text-white background__image">
-	  	<h1 class="mb-3 h2 mt-5" id="h1__myself">Фотографии</h1>
+	  	<h1 class="mb-3 h2 h1__myself">Фотографии</h1>
 		<div class="wrapper mt-5">
 			<div class="row justify-content-center">
 				<div class="col-6">
-					<div class="slider-for img_container">
-						{% for photo in photos %}
+					<picture class="slider-for img_container">
+						{% for photo in photos.qs %}
 							<img class="img-fluid rounded-5"
 								 id="img__general__photo"
 								 src="{{ photo.image.url }}">
 						{% endfor %}
-					</div>
+					</picture>
 				</div>
-
 				<div class="popup-image">
 					<img
 							src="/media/image/079eac5ac88d91ef5382ee95ad990855.jpeg" class="img_photo" alt="">
-					<span>&times;</span>
+					<span>&times</span>
 				</div>
-				
 				<div class="col-9">
-					<div class="slider-nav" >
-						{% for photo in photos %}
+					<picture class="slider-nav" >
+						{% for photo in photos.qs %}
 							<img src="{{ photo.image.url }}"
 								 class="rounded-5 icons__img__mini {% if forloop.first %}active-thumbnail{% endif %}">
 						{% endfor %}
-					</div>
+					</picture>
 				</div>
 			</div>
-
 		</div>
+	</div>
 
+<!--Часть с контактами и адресами.-->
+	<div class="container">
+		<div class="row column-gap-5 mt-4 ms-5 mx-4">
+			<h1 class="h1__myself">Контакты</h1>
+			<div class="col mt-4">
+				<address class="address">
+					<div class="address_space_center"
+					>Адрес Space Center Houston:</div>
+					<p>1601 NASA Parkway, Houston, Texas 77058</p>
+				</address>
+				<div class="site">
+					<div class="address_space_center">Сайт</div>
+					<p><a href="#" style="text-decoration: none;">NASA.gov</a></p>
+				</div>
+				<div class="icons">
+					<a href="#"><img src="/static/img/telegram.svg"
+						 class="icons__telegram__youtube"></a>
+					<a href="#"><img src="/static/img/youtube.svg"
+						 class="icons__telegram__youtube ms-2"></a>
+				</div>
 
+				<div class="question__form__and_text mt-4">
+					<div class="question__text__and__header">
+						<h4 class="header__question">Остались вопросы?</h4>
+						<p class="question_text">Visit our Visitor Information
+							page to get helpful tips and advice about
+							visiting the center, email
+							<a href="#" style="text-decoration: none;">schinfo@spacecenter.org</a>,
+							or submit a question by filling out the form
+							bellow.</p>
+					</div>
+				</div>
 
+<!--Форма для ввода данных.-->
+				<div class="data__entry__fields">
+					<form action="#" method="post">
+						<div class="fio__input mb-3">
+							<input type="text" class="form-control"
+								   placeholder="Ваше ФИО*" required>
+						</div>
+						<div class="email__input mb-3">
+							<input type="email" class="form-control"
+								   placeholder="Ваш email*" required>
+						</div>
+						<div class="phone__input mb-3">
+							<input type="text" class="form-control"
+								   placeholder="Ваш телефон*" required>
+						</div>
+						<div class="text__input mb-3">
+							<textarea class="form-control" rows="3"
+									  placeholder="Ваше сообщение*" required
+							></textarea>
+						</div>
+						<div class="form-check mb-3">
+							<input class="form-check-input"
+								   type="checkbox" value=""
+								   id="flexCheckDefault">
+						  	<label class="form-check-label"
+								   for="flexCheckDefault">
+								Согласие на <a href="#" style="text-decoration: none;">обработку персональных данных</a>
+						  	</label>
+						</div>
+						<div class="d-grid gap-2 col-4 mb-5">
+							<button
+									class="btn btn-danger button_text">ОТПРАВИТЬ</button>
+						</div>
+					</form>
+				</div>
+			</div>
+<!--Часть с картой.-->
+    		<figure class="col mt-4 mb-5">
+				<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4166.058168776849!2d-95.09753505561804!3d29.55148252625578!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x86409d009b457217%3A0xce104dd22e7fa956!2zMTYwMSBFIE5BU0EgUGt3eSwgSG91c3RvbiwgVFggNzcwNTgsINCh0KjQkA!5e0!3m2!1sru!2sru!4v1705514696510!5m2!1sru!2sru"
+						style="width: 100%; height: 100%; border-radius: 40px;"
+						allowfullscreen=""
+						loading="lazy"
+						referrerpolicy="no-referrer-when-downgrade">
+				</iframe>
+			</figure>
+		</div>
 
 	</div>
 
